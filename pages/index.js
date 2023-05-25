@@ -18,10 +18,19 @@ export default function Home() {
 				/>
 			</Head>
 
+			{/* main section */}
 			<main className={styles.main}>
-        <h1>Welcome here...</h1>
-      </main>
+				<div>
+					<h1>Welcome here...</h1>
+					<ul>
+						<li>Product 1</li>
+						<li>Product 2</li>
+						<li>Product 3</li>
+					</ul>
+				</div>
+			</main>
 
+			{/* footer section */}
 			<footer className={styles.footer}>
 				<a href=''>
 					Powered by
