@@ -27,7 +27,9 @@ export default function MainLayout({ children }) {
 			</AppBar>
 
 			{/* body element, main */}
-			<Container className={styles.main}>{children}</Container>
+			<Container className={styles.main}>
+				{children}
+			</Container>
 
 			{/* body element, footer */}
 			<footer className={styles.footer}>
@@ -42,7 +44,9 @@ export default function MainLayout({ children }) {
 						/>
 					</span>
 				</a>
-				<Typography>@Copyright 2023 | All Rights Reserved.</Typography>
+				<Typography>
+					@Copyright 2023 | All Rights Reserved.
+				</Typography>
 			</footer>
 		</div>
 	);

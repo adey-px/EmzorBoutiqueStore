@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }) {
 
 export default MyApp;
 
-	/* 
-  Client-side fix for SSR issue in MUI,
-  remove server-side generated CSS
-  - create useEffect hook as above
-  - next create _document.js
-  */
+/* 
+Client-side fix for SSR issue in MUI,
+remove server-side generated CSS
+- create useEffect hook as above
+- next create _document.js
+*/
