@@ -8,17 +8,21 @@ import {
 	CardContent,
 	CardMedia,
 	Grid,
+	Link,
 	Typography,
 } from '@material-ui/core';
 import DATA from '../datastore/data';
+import useStyles from '../styles/mainstyle';
 
-// Home page render
+// Function logic for Home page render
 export default function Home() {
+	const classes = useStyles();
+
 	return (
 		<div>
 			<MainLayout>
 				<div>
-					<h1>Products Gallery</h1>
+					<h1 className={classes.heading}>All Products</h1>
 					<Grid
 						container
 						spacing={3}
@@ -30,22 +34,25 @@ export default function Home() {
 								key={product.name}
 							>
 								<Card>
-									<CardActionArea>
-										<CardMedia
-											component='img'
-											title={product.name}
-											image={product.image}
-										/>
-										<CardContent>
-											<Typography>{product.name}</Typography>
-										</CardContent>
-									</CardActionArea>
+									<Link href={`/product/${product.slug}`}>
+										<CardActionArea>
+											<CardMedia
+												component='img'
+												title={product.name}
+												image={product.image}
+											/>
+											<CardContent className={classes.proLabel}>
+												<Typography>{product.name}</Typography>
+												<Typography>${product.price}</Typography>
+											</CardContent>
+										</CardActionArea>
+									</Link>
 
 									<CardActions>
-										<Typography>${product.price}</Typography>
 										<Button
 											size='small'
 											color='primary'
+											className={classes.addBtn}
 										>
 											Add to Cart
 										</Button>

@@ -1,13 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
-import { AppBar, Container, Toolbar, Typography } from '@material-ui/core';
+import {
+	AppBar,
+	Container,
+	Link,
+	Icon,
+	Toolbar,
+	Typography,
+} from '@material-ui/core';
 import Image from 'next/image';
-import useStyle from '../styles/mainstyle';
-import classes from '../styles/home.module.css';
+import useStyles from '../styles/mainstyle';
 
 //
 export default function MainLayout({ children }) {
-	const styles = useStyle();
+	const classes = useStyles();
 
 	return (
 		<div>
@@ -18,35 +24,42 @@ export default function MainLayout({ children }) {
 
 			{/* body element, navbar */}
 			<AppBar
-				position='static'
-				className={styles.navbar}
+				position='sticky'
+				className={classes.mainNavbar}
 			>
 				<Toolbar>
-					<Typography>Emzor</Typography>
+					<Link href='/'>
+						<Icon>
+							<img
+								src='/icons/emzor.svg'
+								alt='main-logo'
+							/>
+						</Icon>
+					</Link>
+					<div className={classes.navbar}>
+						<Link href='/cart'>Cart</Link>
+						<Link href='/login'>Login</Link>
+					</div>
 				</Toolbar>
 			</AppBar>
 
 			{/* body element, main */}
-			<Container className={styles.main}>
-				{children}
-			</Container>
+			<Container className={classes.main}>{children}</Container>
 
 			{/* body element, footer */}
-			<footer className={styles.footer}>
+			<footer className={classes.footer}>
 				Powered by
 				<a href=''>
-					<span className={classes.logo}>
+					<span>
 						<Image
-							src='/vercel.svg'
-							alt='logo'
+							src='/icons/vercel.svg'
+							alt='footer-logo'
 							width={72}
 							height={16}
 						/>
 					</span>
 				</a>
-				<Typography>
-					@Copyright 2023 | All Rights Reserved.
-				</Typography>
+				<Typography>@Copyright 2023 | All Rights Reserved.</Typography>
 			</footer>
 		</div>
 	);

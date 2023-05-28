@@ -1,7 +1,9 @@
 import React from 'react';
 import { ServerStyleSheets } from '@material-ui/core/styles';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-
+/*
+Auxilliary logic for main App in _app.js
+*/
 // Modify page render, fix SSR style issue in MUI
 export default class AppDocument extends Document {
 	render() {

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import '../styles/globals.css';
 
-//
+// Default custom main App
 function MyApp({ Component, pageProps }) {
 	useEffect(() => {
 		const serverStyle = document.querySelector('#jss-server-side');
